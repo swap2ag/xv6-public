@@ -17,12 +17,12 @@ typedef struct syscall_info_t
     int count;
 }syscall_info_t;
 
-syscall_info_t syscall_info[NUM_SYSCALLS];
-syscall_trace_state_t syscalls_tracing_state;
+extern syscall_info_t syscall_info[NUM_SYSCALLS];
+extern syscall_trace_state_t syscalls_tracing_state;
 
 void syscalltraceinit();
 int getsyscall_idx(int syscall_num);
 void print_active_syscalls();
 void toggle_syscall_trace_state();
-
+void increment_syscall_count(int syscall_num);
 #endif

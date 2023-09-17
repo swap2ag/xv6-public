@@ -20,6 +20,7 @@ OBJS = \
 	string.o\
 	swtch.o\
 	syscall.o\
+	syscall_trace.o\
 	sysfile.o\
 	sysproc.o\
 	trapasm.o\
@@ -252,7 +253,6 @@ qemu-nox-gdb: fs.img xv6.img .gdbinit
 # check in that version.
 
 EXTRA=\
-	syscall_trace.c\
 	user_toggle.c print_count.c user_add.c user_ps.c\
 	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
 	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c zombie.c\
