@@ -15,6 +15,7 @@
 #include "sleeplock.h"
 #include "file.h"
 #include "fcntl.h"
+#include "syscall_trace.h"
 
 // Fetch the nth word-sized system call argument as a file descriptor
 // and return both the descriptor and the corresponding struct file.
@@ -447,7 +448,7 @@ sys_pipe(void)
 int 
 sys_print_count(void)
 {
-
+  print_active_syscalls();
   return 0;
 }
 
@@ -455,6 +456,7 @@ sys_print_count(void)
 int 
 sys_toggle(void)
 {
+  toggle_syscall_trace_state();
   return 0;
 }
 
